@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex in CSS</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        /* Flex ensures all the content is coming in 1 line */
+        display: flex;
+        /* flex-direction: column; */
+        height: 100vh;
+        width: 100vw;
+        background-color: #ccc;
+        /* for main axis */
+        /* justify-content: center; */
+        /* for cross axis */
+        /* align-items: center; */
+      }
+
+      .box {
+        background-color: pink;
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+
+      .box:nth-child(2) {
+        /* Order property helps you to define in which order the content is going to be rendered when all the display:flex property is defined */
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">This is my content 1</div>
+      <div class="box">This is my content 2</div>
+      <div class="box">This is my content 3</div>
+    </div>
+  </body>
+</html>

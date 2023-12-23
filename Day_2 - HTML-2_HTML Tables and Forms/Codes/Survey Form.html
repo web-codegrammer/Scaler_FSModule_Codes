@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1>Survey Form</h1>
+    <form>
+      <div>
+        <label for="name">Name: </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Enter Name"
+        />
+      </div>
+      <div>
+        <label for="age">Age: </label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Enter Age"
+          min="18"
+          max="60"
+          width="100%"
+        />
+      </div>
+      <div>
+        <label>Gender: </label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label>Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label>Female</label>
+      </div>
+      <div>
+        <label for="food">Favourite Food: </label>
+        <select id="food" name="food">
+          <option value="Pizza" selected>Pizza</option>
+          <option value="Chinese Food">Chinese Food</option>
+          <option value="Indian Food">Indian Food</option>
+        </select>
+      </div>
+      <div>
+        <label for="cook">Do you like to cook? </label>
+        <input type="checkbox" id="cook" name="cook" />
+        <label for="yes">Yes</label>
+        <!-- <input type="checkbox" id="cook1" name="cook1" />
+        <label for="cook1">No</label> -->
+      </div>
+      <div>
+        <label for="comment">Additional comments: </label>
+        <textarea
+          id="comment"
+          name="comment"
+          placeholder="Enter your comments"
+        ></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Submit Form" />
+      </div>
+    </form>
+  </body>
+</html>

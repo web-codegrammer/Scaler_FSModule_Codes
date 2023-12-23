@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get in Touch Form</title>
+  </head>
+  <body>
+    <section>
+      <h1>Get in Touch</h1>
+      <form>
+        <!-- 1. Name input section (an input of text type) -->
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Name" />
+        </div>
+
+        <!-- 2. Email input section (an input of email type) -->
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+
+        <!-- 3. Message input section (a textarea) -->
+        <div>
+          <label for="message">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Message"
+          ></textarea>
+        </div>
+
+        <!-- 4. and a submit button (an input of submit type) -->
+        <!-- This is important to understand -->
+        <div>
+          <input type="submit" name="submit" value="Send" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

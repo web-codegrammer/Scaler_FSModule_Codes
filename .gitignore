@@ -1,0 +1,10 @@
+# Exclude PDF files
+*.pdf
+
+# Exclude image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg

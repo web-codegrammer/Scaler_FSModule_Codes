@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <style>
+      /* Some generic property to override the defualt property added by browsers */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #ccc;
+      }
+
+      p {
+        background-color: yellow;
+      }
+
+      .gift {
+        /* border: 1px solid red; */
+        width: 33.33%;
+        /* height: 200px; */
+        /* Marging is not part of box-sizing property
+           Border-box(Provided width) = width + border + padding */
+        box-sizing: border-box;
+        float: left;
+        /* border-width: 10px;
+        border-style: dashed;
+        border-color: green; */
+        /* border-top: 3px solid green; */
+      }
+
+      .wrapping {
+        border: 1px solid red;
+        padding: 10px 50px 100px 150px;
+        /* float: left; */
+        /* margin: 30px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gift wrapping">
+      <p>This is gift for you!</p>
+    </div>
+
+    <div class="gift wrapping">
+      <p>This is gift for you!</p>
+    </div>
+
+    <div class="gift wrapping">
+      <p>This is gift for you!</p>
+    </div>
+  </body>
+</html>
