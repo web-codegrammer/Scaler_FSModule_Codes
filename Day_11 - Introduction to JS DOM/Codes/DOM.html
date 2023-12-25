@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="heading">Heading</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut minima
+        veritatis, velit esse laborum impedit! Tenetur, hic? Quaerat accusamus
+        quod voluptatibus, nesciunt enim ex reiciendis ad, quam magni possimus
+        molestias.
+      </p>
+      <ul>
+        <li class="item">First</li>
+        <li class="item">Second</li>
+        <li>Third</li>
+      </ul>
+    </div>
+    /* At this point at least your DOM tree is created */
+    <script>
+      const headingRef = document.getElementById("heading");
+      console.log(headingRef);
+      // 'li' element reference
+      const itemsRef = document.getElementsByClassName("item");
+      console.log(itemsRef);
+
+      // paragraph element reference
+      const pRef = document.getElementsByTagName("p");
+      console.log(pRef); // pRef is object here
+
+      // Will give only one refernce of 'li'
+      const liRef = document.querySelector("ul li");
+      console.log(liRef);
+
+      // Will give nodeList refernce of 'li'
+      const liRef_all = document.querySelectorAll("ul li.item");
+      console.log(liRef_all);
+    </script>
+  </body>
+</html>

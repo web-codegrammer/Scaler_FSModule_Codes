@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Click</title>
+  </head>
+  <body>
+    <button>Click</button>
+    <h1 style="color: red; background-color: blue">
+      <span>Some detail here !</span>
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+      quibusdam eum doloremque, sed enim odio at ea temporibus suscipit
+      explicabo qui sequi, nulla excepturi dolore nemo fugiat? Cum, modi. Ab?
+    </p>
+    <button class="parlour">Style</button>
+
+    <script>
+      // By default it is going to give you the list so select first i.e [0]th item from it for button
+      const buttonRef = document.getElementsByTagName("button")[0];
+
+      // Adding event to refernce using addEventListner
+      buttonRef.addEventListener("click", function (event) {
+        console.log(event);
+
+        // getting refernce of 'h1'
+        const h1Ref = document.querySelector("h1");
+        // innerText is basically used for 'read' and 'write' both
+        window.alert(h1Ref.innerText); // O/p : Some detail here !
+        // Another way to handle similiar kind of thing
+        window.alert(h1Ref.innerHTML); // O/p : <span>Some detail here !</span>
+
+        // overriding using innerText
+        h1Ref.innerText = "Hehehehehe!";
+      });
+
+      // Styling related 'Write operation'
+      const parlourRef = document.querySelector(".parlour");
+      parlourRef.addEventListener("click", function (event) {
+        const h1Ref = document.querySelector("h1");
+        console.log(h1Ref.style.color);
+        h1Ref.style.color = "green";
+        h1Ref.style.fontSize = "12px";
+        console.log(h1Ref.style.backgroundColor);
+        h1Ref.style.backgroundColor = "yellow";
+
+        // Dark-mode light-mode kind of thing to the body
+        const bodyRef = document.getElementsByTagName("body")[0]; // This is going to give you the list i.e nodeList
+        bodyRef.style.backgroundColor = "black";
+        bodyRef.style.color = "white";
+      });
+    </script>
+  </body>
+</html>
