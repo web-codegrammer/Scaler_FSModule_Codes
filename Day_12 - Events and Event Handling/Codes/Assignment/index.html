@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cell {
+        border: 1px solid;
+        margin: auto;
+        margin-top: 10rem;
+        height: 20rem;
+        width: 20rem;
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="cell"></div>
+  </body>
+  <script>
+    // Write your JS program here
+    const cellRef = document.querySelector(".cell");
+    // 1. Whenever the mouse enters the cell, a jail should be drawn over it.
+    cellRef.addEventListener("mouseover", () => {
+      cellRef.style.background =
+        "url(https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/055/850/original/jail.jpg?1699030242)";
+    });
+    // 2. It should be removed once it leaves
+    cellRef.addEventListener("mouseout", () => {
+      cellRef.style.background = "none";
+    });
+  </script>
+</html>
