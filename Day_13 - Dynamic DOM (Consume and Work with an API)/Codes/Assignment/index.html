@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button id="all">Remove All</button>
+    <ul>
+      <li>
+        <p>Task - 1</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 2</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 3</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 4</p>
+        <button>delete</button>
+      </li>
+    </ul>
+    <script>
+      // Write your JS program here =========
+      // Get reference to 'Remove All' button
+      const removeAllbtnRef = document.querySelector("#all"); // OR document.getElementById("all");
+      // Get reference to 'ul' element
+      const ulRef = document.querySelector("ul");
+
+      // 1. Add eventListner to 'Remove All' button to Make the Remove All button work
+      // It will remove all the tasks listed under 'ul'
+      removeAllbtnRef.addEventListener("click", function (e) {
+        ulRef.style.display = "none";
+      });
+
+      // 2. Traverse on all li's to make all the individual delete buttons work
+      // Below will list all individual 'delete' buttons present under 'ul'
+      const alldeletebtnRef = document.querySelectorAll("ul li button");
+      alldeletebtnRef.forEach((btnRef) => {
+        btnRef.addEventListener("click", function (e) {
+          e.target.parentElement.style.display = "none"; // this is to remove all content under single 'li'
+        });
+      });
+    </script>
+  </body>
+</html>
