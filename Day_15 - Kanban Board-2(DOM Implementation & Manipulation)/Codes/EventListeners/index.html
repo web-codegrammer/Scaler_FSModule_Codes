@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling and Capturing</title>
+    <style>
+      * {
+        padding: 30px;
+      }
+      .child {
+        border: 1px solid green;
+      }
+
+      .parent {
+        border: 1px solid blue;
+      }
+
+      .grand-parent {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grand-parent">
+      Grand Parent
+      <div class="parent">
+        Parent
+        <div class="child">Child</div>
+      </div>
+    </div>
+    <script>
+      const grandParentRef = document.querySelector(".grand-parent");
+      const parentRef = document.querySelector(".parent");
+      const childeRef = document.querySelector(".child");
+
+      grandParentRef.addEventListener("click", function (e) {
+        alert("GrandParent Listener");
+      });
+
+      parentRef.addEventListener("click", function (e) {
+        alert("Parent Listener");
+      });
+
+      childeRef.addEventListener("click", function (e) {
+        // stopPropagation() is used to stop bubbling my event from child to further level
+        e.stopPropagation();
+        alert("Child Listener");
+      });
+
+      // Adding alert at document level
+      document.addEventListener("click", function (e) {
+        alert("Document Listener");
+      });
+
+      document.addEventListener(
+        "click",
+        function (e) {
+          // application of event-capture
+          // No one can stop you from capturing the event
+          alert(`Document-capture ${e.clientX} ${e.clientY}`);
+        },
+        {
+          capture: true, // By passing this(3rd parameter) it means this event is of capturing type not of bubbling type
+        }
+      );
+
+      /*
+      parentRef.addEventListener(
+        "click",
+        function (e) {
+          alert("Parent-capture");
+        },
+        {
+          capture: true,
+        }
+      );
+      */
+    </script>
+  </body>
+</html>

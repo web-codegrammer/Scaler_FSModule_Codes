@@ -41,6 +41,7 @@ textareaRef.addEventListener('keydown', function (e) { // Should not use 'keyup'
 
 function createTask(task) {
     const taskRef = document.createElement('div');
+    // className is keyword here
     taskRef.className = 'task';
     taskRef.innerHTML = `
         <div class="task-category ${task.category}"></div>
